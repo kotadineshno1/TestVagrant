@@ -1,0 +1,29 @@
+class Planet:
+    
+    def __init__(self,name,surface_gasses,no_of_mooons,planet_rings):
+       self.name = name
+       self.surface_gasses = surface_gasses
+       self.no_of_mooons = no_of_mooons
+       self.planet_rings = planet_rings
+    
+    def count_of_moons_having_rings(self):
+        moons_count = 0
+        if self.planet_rings == "Yes":
+            moons_count += self.no_of_mooons
+        return moons_count
+                
+                
+obj1 = Planet("Mercury","",0,"No")
+obj2 = Planet("Venus","Carbon Dioxide,Nitrogen",0,"No")
+obj3 = Planet("Earth","Nitrogen,Oxygen",1,"No")
+obj4 = Planet("Jupitor","Hydrogen,Helium",79,"Yes")
+obj5 = Planet("Saturn","Hydrogen,Helium",83,"Yes")
+obj6 = Planet("Uranus","Hydrogen,Helium,Methane",27,"Yes")
+l = []
+l.append(obj1.count_of_moons_having_rings())
+l.append(obj2.count_of_moons_having_rings())
+l.append(obj3.count_of_moons_having_rings())
+l.append(obj4.count_of_moons_having_rings())
+l.append(obj5.count_of_moons_having_rings())
+l.append(obj6.count_of_moons_having_rings())
+print(sum(l))
